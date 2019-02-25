@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		779E1AE0852B557FF34CAAEB /* Pods_smoke_detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */; };
+		CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */; };
+		CFD1DD6F22249DAA00BA6689 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6E22249DAA00BA6689 /* ViewController.swift */; };
+		CFD1DD7222249DAA00BA6689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7022249DAA00BA6689 /* Main.storyboard */; };
+		CFD1DD7422249DAB00BA6689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7322249DAB00BA6689 /* Assets.xcassets */; };
+		CFD1DD7722249DAB00BA6689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smoke_detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD1DD6922249DAA00BA6689 /* smoke-detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smoke-detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFD1DD6E22249DAA00BA6689 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFD1DD7122249DAA00BA6689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFD1DD7322249DAB00BA6689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFD1DD7622249DAB00BA6689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFD1DD7822249DAB00BA6689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E50D0CC8B629F9AAD394664A /* Pods-smoke-detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smoke-detector.debug.xcconfig"; path = "Target Support Files/Pods-smoke-detector/Pods-smoke-detector.debug.xcconfig"; sourceTree = "<group>"; };
+		F3AA4C3A1F6E08686EE36F07 /* Pods-smoke-detector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smoke-detector.release.xcconfig"; path = "Target Support Files/Pods-smoke-detector/Pods-smoke-detector.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFD1DD6622249DAA00BA6689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779E1AE0852B557FF34CAAEB /* Pods_smoke_detector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C5690BB2494C9D436E4851CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFD1DD6022249DAA00BA6689 = {
+			isa = PBXGroup;
+			children = (
+				CFD1DD6B22249DAA00BA6689 /* smoke-detector */,
+				CFD1DD6A22249DAA00BA6689 /* Products */,
+				FBE05D7C4CAD9546765FF20C /* Pods */,
+				C5690BB2494C9D436E4851CB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CFD1DD6A22249DAA00BA6689 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFD1DD6922249DAA00BA6689 /* smoke-detector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFD1DD6B22249DAA00BA6689 /* smoke-detector */ = {
+			isa = PBXGroup;
+			children = (
+				CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */,
+				CFD1DD6E22249DAA00BA6689 /* ViewController.swift */,
+				CFD1DD7022249DAA00BA6689 /* Main.storyboard */,
+				CFD1DD7322249DAB00BA6689 /* Assets.xcassets */,
+				CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */,
+				CFD1DD7822249DAB00BA6689 /* Info.plist */,
+			);
+			path = "smoke-detector";
+			sourceTree = "<group>";
+		};
+		FBE05D7C4CAD9546765FF20C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E50D0CC8B629F9AAD394664A /* Pods-smoke-detector.debug.xcconfig */,
+				F3AA4C3A1F6E08686EE36F07 /* Pods-smoke-detector.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFD1DD6822249DAA00BA6689 /* smoke-detector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD1DD7B22249DAB00BA6689 /* Build configuration list for PBXNativeTarget "smoke-detector" */;
+			buildPhases = (
+				A8C1DCE0742A6B35482C3167 /* [CP] Check Pods Manifest.lock */,
+				CFD1DD6522249DAA00BA6689 /* Sources */,
+				CFD1DD6622249DAA00BA6689 /* Frameworks */,
+				CFD1DD6722249DAA00BA6689 /* Resources */,
+				E4835665525F6480CCD74833 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "smoke-detector";
+			productName = "smoke-detector";
+			productReference = CFD1DD6922249DAA00BA6689 /* smoke-detector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFD1DD6122249DAA00BA6689 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Robert Herley";
+				TargetAttributes = {
+					CFD1DD6822249DAA00BA6689 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = CFD1DD6422249DAA00BA6689 /* Build configuration list for PBXProject "smoke-detector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFD1DD6022249DAA00BA6689;
+			productRefGroup = CFD1DD6A22249DAA00BA6689 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFD1DD6822249DAA00BA6689 /* smoke-detector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFD1DD6722249DAA00BA6689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD1DD7722249DAB00BA6689 /* LaunchScreen.storyboard in Resources */,
+				CFD1DD7422249DAB00BA6689 /* Assets.xcassets in Resources */,
+				CFD1DD7222249DAA00BA6689 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A8C1DCE0742A6B35482C3167 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-smoke-detector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4835665525F6480CCD74833 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-smoke-detector/Pods-smoke-detector-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-smoke-detector/Pods-smoke-detector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFD1DD6522249DAA00BA6689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD1DD6F22249DAA00BA6689 /* ViewController.swift in Sources */,
+				CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CFD1DD7022249DAA00BA6689 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD1DD7122249DAA00BA6689 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD1DD7622249DAB00BA6689 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFD1DD7922249DAB00BA6689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFD1DD7A22249DAB00BA6689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFD1DD7C22249DAB00BA6689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E50D0CC8B629F9AAD394664A /* Pods-smoke-detector.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LVR9F98W86;
+				INFOPLIST_FILE = "smoke-detector/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.robherley.smoke-detector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFD1DD7D22249DAB00BA6689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3AA4C3A1F6E08686EE36F07 /* Pods-smoke-detector.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LVR9F98W86;
+				INFOPLIST_FILE = "smoke-detector/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.robherley.smoke-detector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFD1DD6422249DAA00BA6689 /* Build configuration list for PBXProject "smoke-detector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD1DD7922249DAB00BA6689 /* Debug */,
+				CFD1DD7A22249DAB00BA6689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFD1DD7B22249DAB00BA6689 /* Build configuration list for PBXNativeTarget "smoke-detector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD1DD7C22249DAB00BA6689 /* Debug */,
+				CFD1DD7D22249DAB00BA6689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFD1DD6122249DAA00BA6689 /* Project object */;
+}

@@ -69,9 +69,9 @@
 		CFD1DD6B22249DAA00BA6689 /* smoke-detector */ = {
 			isa = PBXGroup;
 			children = (
+				CFD1DD7022249DAA00BA6689 /* Main.storyboard */,
 				CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */,
 				CFD1DD6E22249DAA00BA6689 /* ViewController.swift */,
-				CFD1DD7022249DAA00BA6689 /* Main.storyboard */,
 				CFD1DD7322249DAB00BA6689 /* Assets.xcassets */,
 				CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */,
 				CFD1DD7822249DAB00BA6689 /* Info.plist */,
@@ -188,6 +188,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-smoke-detector/Pods-smoke-detector-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
@@ -195,6 +196,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);

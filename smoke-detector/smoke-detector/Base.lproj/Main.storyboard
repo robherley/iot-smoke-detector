@@ -18,37 +18,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Gp-nqh">
-                                <rect key="frame" x="136" y="237" width="102" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Gp-nqh">
+                                <rect key="frame" x="136" y="52" width="102" height="49"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="42"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data From Socket:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmm-zL-cN2">
-                                <rect key="frame" x="118" y="208" width="138" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-QA-if1" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                <rect key="frame" x="16" y="109" width="343" height="538"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundFillColor">
+                                        <color key="value" red="0.17950707669999999" green="0.2030345798" blue="0.2528765798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-JT-e2U">
+                                <rect key="frame" x="246" y="75" width="40" height="26"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.17950707669999999" green="0.2030345798" blue="0.2528765798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cmm-zL-cN2" secondAttribute="trailing" constant="119" id="2bB-yG-z6z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JLd-Gp-nqh" secondAttribute="bottom" constant="381" id="DEW-Jg-94I"/>
-                            <constraint firstItem="JLd-Gp-nqh" firstAttribute="top" secondItem="cmm-zL-cN2" secondAttribute="bottom" constant="8" id="OyA-rN-Up3"/>
-                            <constraint firstItem="cmm-zL-cN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="188" id="Rjy-1i-a9O"/>
-                            <constraint firstItem="JLd-Gp-nqh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="VS7-68-U95"/>
-                            <constraint firstItem="cmm-zL-cN2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="jm0-MY-vWk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JLd-Gp-nqh" secondAttribute="trailing" constant="137" id="pIp-Ud-uJi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3k-QA-if1" secondAttribute="bottom" constant="20" id="DH6-nh-ZhL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3k-QA-if1" secondAttribute="trailing" constant="16" id="SVh-Yr-7Ne"/>
+                            <constraint firstItem="JLd-Gp-nqh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UII-0v-rc6"/>
+                            <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="JLd-Gp-nqh" secondAttribute="bottom" constant="8" id="hJT-Kq-5zY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ja0-JT-e2U" secondAttribute="trailing" constant="89" id="hQl-gz-IPj"/>
+                            <constraint firstItem="F3k-QA-if1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kg3-Mz-Ycr"/>
+                            <constraint firstItem="ja0-JT-e2U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="mnj-OM-Wcn"/>
+                            <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="ja0-JT-e2U" secondAttribute="bottom" constant="8" id="pGQ-fz-1rA"/>
+                            <constraint firstItem="JLd-Gp-nqh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="sKd-Nj-IfO"/>
+                            <constraint firstItem="ja0-JT-e2U" firstAttribute="leading" secondItem="JLd-Gp-nqh" secondAttribute="trailing" constant="8" id="tWF-4o-YmU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="JLd-Gp-nqh" id="76S-7p-Pjc"/>
+                        <outlet property="graphView" destination="F3k-QA-if1" id="APY-9W-sbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>

@@ -1,20 +1,24 @@
 PODS:
+  - ScrollableGraphView (4.0.6)
   - Socket.IO-Client-Swift (14.0.0):
     - Starscream (~> 3.0.6)
   - Starscream (3.0.6)
 
 DEPENDENCIES:
+  - ScrollableGraphView
   - Socket.IO-Client-Swift (~> 14.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ScrollableGraphView
     - Socket.IO-Client-Swift
     - Starscream
 
 SPEC CHECKSUMS:
+  ScrollableGraphView: 4af35d4ea9ecdec665d34a74da51da161ddff8ac
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
 
-PODFILE CHECKSUM: fc228d49df201aa59a6f95ffc126012d12f0872f
+PODFILE CHECKSUM: adb75446107e6749a416ced41444ae81d3a1aead
 
 COCOAPODS: 1.6.1

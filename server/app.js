@@ -2,16 +2,32 @@ const express = require('express');
 const app = express();
 
 const sockets = [];
+const detectors = {};
 
 app.use(express.json());
 
 app.post('/', (req, res) => {
   const { value } = req.body;
-  console.log('Read from Detector: ', value);
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  if (!(ip in detectors)) {
+    detectors[ip] = {
+      name: `Detector ${Object.keys(detectors) + 1}`
+    };
+  }
+  console.log(`Reading from ${ip}: `, value);
   for (let socket of sockets) {
-    socket.emit('reading', { data: value || 0 });
+    socket.emit('reading', { data: value || 0, ip });
   }
   res.sendStatus(200);
+});
+
+app.use('/list', (req, res) => {
+  res.json(
+    Object.entries(detectors).map(([ip, { name }]) => ({
+      ip,
+      name
+    }))
+  );
 });
 
 app.use('*', (req, res) => {

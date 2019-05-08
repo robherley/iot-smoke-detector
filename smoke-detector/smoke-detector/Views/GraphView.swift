@@ -10,17 +10,18 @@ import UIKit
 import SocketIO
 import ScrollableGraphView
 
-class ViewController: UIViewController, ScrollableGraphViewDataSource {
+class GraphController: UIViewController, ScrollableGraphViewDataSource {
 
     @IBOutlet var graphView: ScrollableGraphView!
     @IBOutlet weak var dataLabel: UILabel!
     
-    let ITEMS_DISPLAYED = 50
-    let GRAPH_MAX = 4000.0
-    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress])
+    var ip = ""
+    var itemsDisplayed = 50
+    var maxGraphValue = 4000.0
+    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(false), .compress])
     var userLimit = 1800.0
-    var currentIndex = 0
-    lazy var smokeData = [Double](repeating: 0.0, count: ITEMS_DISPLAYED)
+    private var currentIndex = 0
+    lazy var smokeData = [Double](repeating: 0.0, count: itemsDisplayed)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,11 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
     }
     
     func label(atIndex pointIndex: Int) -> String {
-        return "-\(Double(ITEMS_DISPLAYED - pointIndex) / 2)s"
+        return "-\(Double(itemsDisplayed - pointIndex) / 2)s"
     }
     
     func numberOfPoints() -> Int {
-        return ITEMS_DISPLAYED
+        return itemsDisplayed
     }
     
     func setupGraph(graphView: ScrollableGraphView) {
@@ -73,7 +74,7 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
         referenceLines.relativePositions = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
         
         graphView.rangeMin = 0
-        graphView.rangeMax = GRAPH_MAX
+        graphView.rangeMax = maxGraphValue
         graphView.direction = ScrollableGraphViewDirection.rightToLeft
         graphView.addReferenceLines(referenceLines: referenceLines)
         graphView.rightmostPointPadding = (graphView.bounds.width / 2)
@@ -82,7 +83,8 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
     }
     
     func addReading(data reading: Int){
-        if(currentIndex == ITEMS_DISPLAYED){
+        self.dataLabel.text = String(format: "%d", reading)
+        if(currentIndex == itemsDisplayed){
             currentIndex = 0
         }
         smokeData[0] = Double(reading)
@@ -93,7 +95,7 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
     
     func drawLimit(on frame : CGRect) {
         let path = UIBezierPath()
-        let yCoord = CGFloat(Double(frame.minY) + Double(frame.height - 20) * (userLimit / GRAPH_MAX))
+        let yCoord = CGFloat(Double(frame.minY) + Double(frame.height - 20) * (userLimit / maxGraphValue))
         path.move(to: CGPoint(x: frame.minX, y: yCoord))
         path.addLine(to: CGPoint(x: frame.maxX, y: yCoord))
         
@@ -123,9 +125,12 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
             print("socket connected")
         }
         socket.on("reading") {data, ack in
-            guard let reading = data[0] as? [String:Int] else { return }
-            self.dataLabel.text = String(format: "%d", reading["data"]!)
-            self.addReading(data: reading["data"]!)
+            guard let reading = data[0] as? [String:Any] else { return }
+            guard let value = reading["data"] as? Int else { return }
+            guard let srcIP = reading["ip"] as? String else { return }
+            if srcIP != self.ip { return }
+            self.addReading(data: value)
+            print("Reading from \(srcIP): \(value)ppm")
         }
         socket.connect()
     }

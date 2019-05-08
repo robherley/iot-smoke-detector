@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GuY-as-u26">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,76 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select Controller-->
+        <scene sceneID="K8t-h6-0SQ">
+            <objects>
+                <viewController id="GuY-as-u26" customClass="SelectController" customModule="smoke_detector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g02-dK-DRs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-q9-2O2">
+                                <rect key="frame" x="16" y="132" width="343" height="515"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetectCell" textLabel="g2k-9I-Fqo" detailTextLabel="fPN-cX-MGi" style="IBUITableViewCellStyleSubtitle" id="Bml-Mr-jyU">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bml-Mr-jyU" id="eUU-9a-6nT">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2k-9I-Fqo">
+                                                    <rect key="frame" x="15" y="2" width="35" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fPN-cX-MGi">
+                                                    <rect key="frame" x="15" y="22.5" width="58" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoke Detectors 🔥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeI-bg-ied">
+                                <rect key="frame" x="42" y="57" width="284.5" height="42"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                                <color key="textColor" red="0.8461850286" green="0.86990720030000002" blue="0.91559016699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17950707669999999" green="0.2030345798" blue="0.2528765798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ds4-KH-Y80" firstAttribute="trailing" secondItem="JeI-bg-ied" secondAttribute="trailing" constant="48.5" id="Bne-hN-6P2"/>
+                            <constraint firstItem="RtG-q9-2O2" firstAttribute="leading" secondItem="ds4-KH-Y80" secondAttribute="leading" constant="16" id="E9G-dg-r4A"/>
+                            <constraint firstItem="JeI-bg-ied" firstAttribute="top" secondItem="ds4-KH-Y80" secondAttribute="top" constant="37" id="EN4-08-dSv"/>
+                            <constraint firstItem="RtG-q9-2O2" firstAttribute="top" secondItem="JeI-bg-ied" secondAttribute="bottom" constant="33" id="HQg-CW-Ghb"/>
+                            <constraint firstItem="ds4-KH-Y80" firstAttribute="bottom" secondItem="RtG-q9-2O2" secondAttribute="bottom" constant="20" id="Qs2-Wp-4xO"/>
+                            <constraint firstItem="ds4-KH-Y80" firstAttribute="trailing" secondItem="RtG-q9-2O2" secondAttribute="trailing" constant="16" id="Vhu-9K-hQ5"/>
+                            <constraint firstItem="JeI-bg-ied" firstAttribute="leading" secondItem="ds4-KH-Y80" secondAttribute="leading" constant="42" id="chr-rL-xbj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ds4-KH-Y80"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="RtG-q9-2O2" id="TQd-9V-wVX"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showGraph" id="BLK-f4-8pn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CxD-zE-Ovi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930.39999999999998" y="26.53673163418291"/>
+        </scene>
+        <!--Graph Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="smoke_detector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GraphController" customModule="smoke_detector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-QA-if1" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
-                                <rect key="frame" x="16" y="109" width="343" height="538"/>
+                                <rect key="frame" x="16" y="131" width="343" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundFillColor">
@@ -42,15 +108,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.17950707669999999" green="0.2030345798" blue="0.2528765798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="JLd-Gp-nqh" secondAttribute="bottom" constant="30" id="66O-1c-mUJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3k-QA-if1" secondAttribute="bottom" constant="20" id="DH6-nh-ZhL"/>
                             <constraint firstItem="ja0-JT-e2U" firstAttribute="leading" secondItem="JLd-Gp-nqh" secondAttribute="trailing" constant="8" id="Iz9-le-bKK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3k-QA-if1" secondAttribute="trailing" constant="16" id="SVh-Yr-7Ne"/>
                             <constraint firstItem="JLd-Gp-nqh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UII-0v-rc6"/>
-                            <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="JLd-Gp-nqh" secondAttribute="bottom" constant="8" id="hJT-Kq-5zY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ja0-JT-e2U" secondAttribute="trailing" constant="89" id="hQl-gz-IPj"/>
                             <constraint firstItem="F3k-QA-if1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kg3-Mz-Ycr"/>
                             <constraint firstItem="ja0-JT-e2U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="mnj-OM-Wcn"/>
-                            <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="ja0-JT-e2U" secondAttribute="bottom" constant="8" id="pGQ-fz-1rA"/>
                             <constraint firstItem="JLd-Gp-nqh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="sKd-Nj-IfO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

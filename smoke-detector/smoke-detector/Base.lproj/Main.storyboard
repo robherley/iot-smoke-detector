@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Gp-nqh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Gp-nqh">
                                 <rect key="frame" x="136" y="52" width="102" height="49"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,6 +43,7 @@
                         <color key="backgroundColor" red="0.17950707669999999" green="0.2030345798" blue="0.2528765798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3k-QA-if1" secondAttribute="bottom" constant="20" id="DH6-nh-ZhL"/>
+                            <constraint firstItem="ja0-JT-e2U" firstAttribute="leading" secondItem="JLd-Gp-nqh" secondAttribute="trailing" constant="8" id="Iz9-le-bKK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3k-QA-if1" secondAttribute="trailing" constant="16" id="SVh-Yr-7Ne"/>
                             <constraint firstItem="JLd-Gp-nqh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UII-0v-rc6"/>
                             <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="JLd-Gp-nqh" secondAttribute="bottom" constant="8" id="hJT-Kq-5zY"/>
@@ -51,7 +52,6 @@
                             <constraint firstItem="ja0-JT-e2U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="mnj-OM-Wcn"/>
                             <constraint firstItem="F3k-QA-if1" firstAttribute="top" secondItem="ja0-JT-e2U" secondAttribute="bottom" constant="8" id="pGQ-fz-1rA"/>
                             <constraint firstItem="JLd-Gp-nqh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="sKd-Nj-IfO"/>
-                            <constraint firstItem="ja0-JT-e2U" firstAttribute="leading" secondItem="JLd-Gp-nqh" secondAttribute="trailing" constant="8" id="tWF-4o-YmU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

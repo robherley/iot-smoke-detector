@@ -30,7 +30,7 @@ const io = require('socket.io')(server);
 // When a new client connects to our server
 io.sockets.on('connection', socket => {
   console.log(`Client (id: ${socket.id}) connected.`);
-  sockets.push(socket.id);
+  sockets.push(socket);
 
   // When a client disconnects
   socket.on('disconnect', () => {

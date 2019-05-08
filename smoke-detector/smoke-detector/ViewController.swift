@@ -10,117 +10,124 @@ import UIKit
 import SocketIO
 import ScrollableGraphView
 
-
-// Src : https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values#24263296
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(rgb: Int) {
-        self.init(
-            red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 8) & 0xFF,
-            blue: rgb & 0xFF
-        )
-    }
-}
-
 class ViewController: UIViewController, ScrollableGraphViewDataSource {
-    
+
     @IBOutlet var graphView: ScrollableGraphView!
-    
     @IBOutlet weak var dataLabel: UILabel!
-    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress])
     
-    var numberOfPointsInGraph = 29
-    lazy var plotOneData: [Double] = self.generateRandomData(self.numberOfPointsInGraph, max: 100, shouldIncludeOutliers: false)
+    let ITEMS_DISPLAYED = 50
+    let GRAPH_MAX = 4000.0
+    let manager = SocketManager(socketURL: URL(string: "http://localhost:8080")!, config: [.log(true), .compress])
+    var userLimit = 1800.0
+    var currentIndex = 0
+    lazy var smokeData = [Double](repeating: 0.0, count: ITEMS_DISPLAYED)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        graphView.dataSource = self
+        setupGraph(graphView: graphView)
+        initSocketHandlers()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        drawLimit(on: graphView.frame)
+    }
 
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
         switch(plot.identifier) {
-        case "one":
-            return plotOneData[pointIndex]
+        case "data", "dots":
+            return smokeData[pointIndex]
         default:
             return 0
         }
     }
     
     func label(atIndex pointIndex: Int) -> String {
-        return "FEB \(pointIndex+1)"
+        return "-\(Double(ITEMS_DISPLAYED - pointIndex) / 2)s"
     }
     
     func numberOfPoints() -> Int {
-        return numberOfPointsInGraph
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        graphView.dataSource = self
-        setupGraph(graphView: graphView)
+        return ITEMS_DISPLAYED
     }
     
     func setupGraph(graphView: ScrollableGraphView) {
+        let dataLinePlot = LinePlot(identifier: "data")
+        dataLinePlot.lineWidth = 3
+        dataLinePlot.lineColor = UIColor(rgb: 0x16aafc)
+        dataLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
+        dataLinePlot.fillType = ScrollableGraphViewFillType.gradient
+        dataLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
-        // Setup the first line plot.
-        let blueLinePlot = LinePlot(identifier: "one")
+        let dotPlot = DotPlot(identifier: "dots")
+        dotPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
+        dotPlot.dataPointType = ScrollableGraphViewDataPointType.circle
+        dotPlot.dataPointSize = 5
+        dotPlot.dataPointFillColor = UIColor(rgb: 0x16aafc)
         
-        blueLinePlot.lineWidth = 3
-        blueLinePlot.lineColor =
-            UIColor(rgb: 0x16aafc)
-        blueLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
-        
-        blueLinePlot.shouldFill = true
-        blueLinePlot.fillType = ScrollableGraphViewFillType.solid
-        blueLinePlot.fillColor = UIColor(rgb: 0x16aafc).withAlphaComponent(0.5)
-        
-        blueLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
-        
-        // Customise the reference lines.
         let referenceLines = ReferenceLines()
-        
         referenceLines.referenceLineLabelFont = UIFont.boldSystemFont(ofSize: 8)
         referenceLines.referenceLineColor = UIColor.white.withAlphaComponent(0.2)
         referenceLines.referenceLineLabelColor = UIColor.white
-        
         referenceLines.dataPointLabelColor = UIColor.white.withAlphaComponent(1)
+        referenceLines.relativePositions = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
         
-        // Add everything to the graph.
+        graphView.rangeMin = 0
+        graphView.rangeMax = GRAPH_MAX
+        graphView.direction = ScrollableGraphViewDirection.rightToLeft
         graphView.addReferenceLines(referenceLines: referenceLines)
-        graphView.addPlot(plot: blueLinePlot)
+        graphView.rightmostPointPadding = (graphView.bounds.width / 2)
+        graphView.addPlot(plot: dataLinePlot)
+        graphView.addPlot(plot: dotPlot)
+    }
+    
+    func addReading(data reading: Int){
+        if(currentIndex == ITEMS_DISPLAYED){
+            currentIndex = 0
+        }
+        smokeData[0] = Double(reading)
+        smokeData = smokeData.rotate(shift: 1)
+        self.graphView.reload()
+        currentIndex += 1
+    }
+    
+    func drawLimit(on frame : CGRect) {
+        let path = UIBezierPath()
+        let yCoord = CGFloat(Double(frame.minY) + Double(frame.height - 20) * (userLimit / GRAPH_MAX))
+        path.move(to: CGPoint(x: frame.minX, y: yCoord))
+        path.addLine(to: CGPoint(x: frame.maxX, y: yCoord))
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = UIColor(rgb: 0xBF616A).cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 3
+        
+        let textLayer = CATextLayer()
+        textLayer.string = "ALERT"
+        textLayer.alignmentMode = CATextLayerAlignmentMode.right
+        textLayer.contentsScale = UIScreen.main.scale
+        textLayer.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.semibold)
+        textLayer.fontSize = 11
+        textLayer.foregroundColor = UIColor(rgb: 0xBF616A).cgColor
+        let rect = CGRect(x: frame.minX, y: yCoord + 10, width: frame.width, height: CGFloat(20))
+        textLayer.frame = rect
+        
+        view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(textLayer)
     }
 
-    func initHandlers() {
+    func initSocketHandlers() {
         let socket = manager.defaultSocket
         socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
         }
         socket.on("reading") {data, ack in
-            guard let reading = data[0] as? [String:Double] else { return }
-            self.dataLabel.text = String(format: "%.2f", reading["data"]!)
+            guard let reading = data[0] as? [String:Int] else { return }
+            self.dataLabel.text = String(format: "%d", reading["data"]!)
+            self.addReading(data: reading["data"]!)
         }
         socket.connect()
-    }
-    
-    private func generateRandomData(_ numberOfItems: Int, max: Double, shouldIncludeOutliers: Bool = false) -> [Double] {
-        var data = [Double]()
-        for _ in 0 ..< numberOfItems {
-            var randomNumber = Double(arc4random()).truncatingRemainder(dividingBy: max)
-            
-            if(shouldIncludeOutliers) {
-                if(arc4random() % 100 < 10) {
-                    randomNumber *= 3
-                }
-            }
-            
-            data.append(randomNumber)
-            print(randomNumber)
-        }
-        return data
     }
 }
 

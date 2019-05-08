@@ -43,14 +43,14 @@ void loop() {
   int httpCode = http.POST("{ \"value\":" + String(smoke_value) + "}");
   String response = http.getString();
 
-  Serial.print("Code: "); 
+  Serial.print("Code: ");
   Serial.println(httpCode);
-  Serial.print("Response: "); 
+  Serial.print("Response: ");
   Serial.println(response);
 
   // End the request
   http.end();
 
   // Give some time before taking next reading
-  delay(200);
+  delay(500);
 }

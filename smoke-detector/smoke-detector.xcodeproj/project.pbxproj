@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		779E1AE0852B557FF34CAAEB /* Pods_smoke_detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */; };
+		CF7F0B812282A101001A1013 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F0B802282A101001A1013 /* Extensions.swift */; };
 		CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */; };
 		CFD1DD6F22249DAA00BA6689 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6E22249DAA00BA6689 /* ViewController.swift */; };
 		CFD1DD7222249DAA00BA6689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7022249DAA00BA6689 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smoke_detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF7F0B802282A101001A1013 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFD1DD6922249DAA00BA6689 /* smoke-detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smoke-detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD1DD6E22249DAA00BA6689 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				CFD1DD7322249DAB00BA6689 /* Assets.xcassets */,
 				CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */,
 				CFD1DD7822249DAB00BA6689 /* Info.plist */,
+				CF7F0B802282A101001A1013 /* Extensions.swift */,
 			);
 			path = "smoke-detector";
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD1DD6F22249DAA00BA6689 /* ViewController.swift in Sources */,
+				CF7F0B812282A101001A1013 /* Extensions.swift in Sources */,
 				CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

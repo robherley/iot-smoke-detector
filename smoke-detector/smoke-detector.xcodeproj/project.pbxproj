@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		779E1AE0852B557FF34CAAEB /* Pods_smoke_detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */; };
 		CF7F0B812282A101001A1013 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F0B802282A101001A1013 /* Extensions.swift */; };
-		CF7F0B8F2283773A001A1013 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F0B8E2283773A001A1013 /* SelectView.swift */; };
+		CF7F0B8F2283773A001A1013 /* SelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F0B8E2283773A001A1013 /* SelectController.swift */; };
 		CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */; };
-		CFD1DD6F22249DAA00BA6689 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6E22249DAA00BA6689 /* GraphView.swift */; };
+		CFD1DD6F22249DAA00BA6689 /* GraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DD6E22249DAA00BA6689 /* GraphController.swift */; };
 		CFD1DD7222249DAA00BA6689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7022249DAA00BA6689 /* Main.storyboard */; };
 		CFD1DD7422249DAB00BA6689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7322249DAB00BA6689 /* Assets.xcassets */; };
 		CFD1DD7722249DAB00BA6689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD1DD7522249DAB00BA6689 /* LaunchScreen.storyboard */; };
@@ -20,10 +20,10 @@
 /* Begin PBXFileReference section */
 		543B4B7364C54595C1510961 /* Pods_smoke_detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smoke_detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7F0B802282A101001A1013 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CF7F0B8E2283773A001A1013 /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		CF7F0B8E2283773A001A1013 /* SelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectController.swift; sourceTree = "<group>"; };
 		CFD1DD6922249DAA00BA6689 /* smoke-detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smoke-detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD1DD6C22249DAA00BA6689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFD1DD6E22249DAA00BA6689 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		CFD1DD6E22249DAA00BA6689 /* GraphController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphController.swift; sourceTree = "<group>"; };
 		CFD1DD7122249DAA00BA6689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFD1DD7322249DAB00BA6689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD1DD7622249DAB00BA6689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,8 +55,8 @@
 		CF7F0B8B228375C0001A1013 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CFD1DD6E22249DAA00BA6689 /* GraphView.swift */,
-				CF7F0B8E2283773A001A1013 /* SelectView.swift */,
+				CFD1DD6E22249DAA00BA6689 /* GraphController.swift */,
+				CF7F0B8E2283773A001A1013 /* SelectController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,9 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD1DD6F22249DAA00BA6689 /* GraphView.swift in Sources */,
+				CFD1DD6F22249DAA00BA6689 /* GraphController.swift in Sources */,
 				CF7F0B812282A101001A1013 /* Extensions.swift in Sources */,
-				CF7F0B8F2283773A001A1013 /* SelectView.swift in Sources */,
+				CF7F0B8F2283773A001A1013 /* SelectController.swift in Sources */,
 				CFD1DD6D22249DAA00BA6689 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
